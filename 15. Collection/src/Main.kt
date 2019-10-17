@@ -53,4 +53,50 @@ fun main(args: Array<String>) {
         // perbedaannya ada di return type
         val members8 = arrayListOf<String>("Tony", "Steve", "Banner")
         println(members8)
+
+    // SET
+    // isinya harus unique (gak boleh kembar)
+
+        // READ-ONLY
+        println("\nREAD-ONLY SET")
+        val members9 = setOf<String>("Tony", "Steve", "Banner", "Peter")
+        println(members9.toList())
+        val members10 = setOf<String>("Tony", "Steve", "Banner", "Tony")
+        // Tony nya bakal hanya ada satu doang
+        println(members10.toList())
+
+        // MUTABLE
+        println("\nMUTABLE SET")
+        val members11 = mutableSetOf<String>("Tony", "Steve", "Banner", "Peter")
+        members11.add("Natasha")
+        println(members.toList())
+
+    // MAP
+    // mengurutkannya berdasarkan key dan value -> list[key]
+
+        // READ-ONLY
+        // <tipeDataKey, tipeDataValue>
+        // key to value
+        println("\nREAD-ONLY MAP")
+        val members12 = mapOf<Int, String>(0 to "Tony", 1 to "Steve", 2 to "Banner", 3 to "Peter")
+
+        println(members12[2])
+
+        for(key in members12.keys) {
+                println(members12[key])
+        }
+
+        members12.forEach {
+               (key, value) -> println("key: $key, value: $value")
+        }
+
+        // MUTABLE
+        println("\nMUTABLE MAP")
+        val members13 = mutableMapOf<Int, String>(0 to "Tony", 1 to "Steve", 2 to "Banner", 3 to "Peter")
+        members13.put(4, "Natasha")
+        members13[5] = "Rhodey"
+
+        members13.forEach {
+                        (key, value) -> println("key: $key, value: $value")
+        }
 }
